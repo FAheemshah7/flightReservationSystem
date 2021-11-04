@@ -16,6 +16,10 @@ public interface FlightRepository  extends JpaRepository<Flight, Integer>{
 	@Query(value="select * FROM t_flight t WHERE t.departure_city =:dCity and t.arrival_city =:arCity and t.date_of_departure =:dateOfDeparture",nativeQuery=true)
 	List<Flight> findFlights(@Param("dCity")String from,@Param("arCity") String to,@Param("dateOfDeparture")Date departureDate);
 
+	Flight findById(int flightId);
+
+
+
 	
 
 }

@@ -17,10 +17,10 @@ public class ReservationController {
 	@Autowired
 	FlightRepository reposit;
 
-	@RequestMapping("showCompleteReservation")
-	public String  showCompleteReservation(@RequestParam("id")int id,ModelMap modelMap) {
-		Optional<Flight> flight = reposit.findById(id)
-		modelMap.addAttribute("", flight);
+	@RequestMapping("/showCompleteReservation")
+	public String  showCompleteReservation(@RequestParam("flightId")int flightId,ModelMap modelMap) {
+		Flight flight = reposit.findById(flightId);
+		modelMap.addAttribute("flight", flight);
 		return "completeReservation";
 	}
 	
