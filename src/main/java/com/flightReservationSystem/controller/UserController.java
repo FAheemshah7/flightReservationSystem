@@ -26,6 +26,10 @@ public class UserController {
 		repository.save(user);
 		return"login/login";
 	}
+	@RequestMapping("/showLogin")
+	public String showLogninPage() {
+		return "login/login";
+	}
 	
 	@PostMapping("/login")
 	public String login(@RequestParam("email")String email,@RequestParam("pass")String pass,ModelMap modelMap) {
