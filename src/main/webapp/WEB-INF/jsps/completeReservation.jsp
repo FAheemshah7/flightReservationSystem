@@ -10,17 +10,17 @@
 </head>
 <body>
 <h2>Complete Reservation </h2>
-AirLine:${flight.operAirline}<br/>
-AirLine:${flight.dCity}<br/>
-AirLine:${flight.arCity}<br/>
+AirLine       :${flight.operAirline}<br/>
+Departure City:${flight.dCity}<br/>
+Arrival City  :${flight.arCity}<br/>
 
 <form action="completeReservation" method="post">
 <pre>
 <h2>Passenger Details</h2>
-First Name:<input type="text" name="pFisrtName" />
-Last Name :<input type="text" name="pLastName" />
-Email 	  :<input type="text" name="pEmail" />
-Phone #   :<input type="text" name="pPhone" />
+First Name :<input type="text" name="pFisrtName" />
+Last Name  :<input type="text" name="pLastName" />
+Email 	   :<input type="text" name="pEmail" />
+Phone #    :<input type="text" name="pPhone" />
 
 <h2>Card Details </h2>
 Name on he Card :<input type="text" name="nameOnTheCard"/>
