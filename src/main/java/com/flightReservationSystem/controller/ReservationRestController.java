@@ -2,6 +2,7 @@ package com.flightReservationSystem.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,7 @@ public class ReservationRestController {
 		
 	}
 	@RequestMapping("/reservations")
-	public Reservation updateReservation(ReservationUpdateRequest request) {
+	public Reservation updateReservation(@RequestBody ReservationUpdateRequest request) {
 		Reservation reservation = repository.findById(request.getId());
 		reservation.setNUMBER_OF_BAGS(request.getNumberOfBags());
 		reservation.setCHECKED_IN(request.getCheckedIn());

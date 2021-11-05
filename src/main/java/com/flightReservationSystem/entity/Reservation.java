@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name="tReservation")
 public class Reservation extends AbstractEntity {
 	
-	private boolean CHECKED_IN;
+	private Boolean CHECKED_IN;
 	private int NUMBER_OF_BAGS;
 	@OneToOne
 	private Passenger passenger;
@@ -17,10 +17,11 @@ public class Reservation extends AbstractEntity {
 	private Flight flight;
 	
 	
-	public boolean isCHECKED_IN() {
+
+	public Boolean getCHECKED_IN() {
 		return CHECKED_IN;
 	}
-	public void setCHECKED_IN(boolean cHECKED_IN) {
+	public void setCHECKED_IN(Boolean cHECKED_IN) {
 		CHECKED_IN = cHECKED_IN;
 	}
 	public int getNUMBER_OF_BAGS() {
