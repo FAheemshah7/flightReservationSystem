@@ -18,6 +18,12 @@ public class Reservation extends AbstractEntity {
 	
 	
 
+	public Flight getFlight() {
+		return flight;
+	}
+	public void setFlight(Flight flight) {
+		this.flight = flight;
+	}
 	public Boolean getCHECKED_IN() {
 		return CHECKED_IN;
 	}
@@ -36,11 +42,9 @@ public class Reservation extends AbstractEntity {
 	public void setPassenger(Passenger passenger) {
 		this.passenger = passenger;
 	}
-	public Flight getFlight() {
-		return flight;
+	public void save(int id) {
+		
 	}
-	public void setFlight(Flight flight) {
-		this.flight = flight;
-	}	
+	
 
 }

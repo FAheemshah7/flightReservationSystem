@@ -40,10 +40,8 @@ public class ReservationserviceImplementation implements ReservationService {
 		reservation.setFlight(flight);
 		reservation.setPassenger(savepassenger);
 		reservation.setCHECKED_IN(false);
-		
-		Reservation saveReservation = reservationRepository.save(reservation);
-		
-		
+
+		Reservation saveReservation = reservationRepository.save(reservation);		
 		return saveReservation;
 	}
 	

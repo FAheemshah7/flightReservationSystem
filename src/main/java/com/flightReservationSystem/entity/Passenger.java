@@ -1,5 +1,6 @@
 package com.flightReservationSystem.entity;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
