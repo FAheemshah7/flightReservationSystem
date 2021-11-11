@@ -26,7 +26,7 @@ Name on he Card  :<input type="text" name="nameOnTheCard"/>
 Card No.	:<input type="text" name="cardNo"/>
 Expiry Date	:<input type="text" name="expiryDate"/>
 Pin Code	:<input type="text" name="pinCode"/>
-<input type="hidden" name="id" value="${flight.id}"/>
+<input type="hidden" name="flightId" value="${flight.id}"/>
 <input type="submit" value="confirm"/>
 </pre>
 

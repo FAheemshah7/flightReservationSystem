@@ -27,6 +27,7 @@ public class ReservationserviceImplementation implements ReservationService {
 	public Reservation bookFlight(ReservationRequest request) {
 		int flightId = request.getFlightId();
 		Flight flight = repository.findById(flightId);
+		System.out.println("FLight id is :"+flightId);
 		
 		Passenger passenger=new Passenger();
 		passenger.setF_name(request.getpFisrtName());
