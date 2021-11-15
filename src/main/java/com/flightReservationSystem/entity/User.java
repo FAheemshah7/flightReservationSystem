@@ -30,6 +30,12 @@ public class User extends AbstractEntity {
 	private Set<Role> roles;
 	
 	
+	public Set<Role> getRoles() {
+		return roles;
+	}
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
 	public String getF_name() {
 		return f_name;
 	}
