@@ -1,5 +1,6 @@
 package com.flightReservationSystem.controller;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -12,21 +13,28 @@ import com.flightReservationSystem.entity.User;
 import com.flightReservationSystem.repository.UserRepository;
 import com.flightReservationSystem.services.SecurityService;
 
+import org.slf4j.Logger;
+
 @Controller
 public class UserController {
+	
 	@Autowired
 	private UserRepository repository;
 
 	@Autowired
 	SecurityService security;
 	
+	private Logger LOGGER=LoggerFactory.getLogger(UserController.class);
+	
 	@RequestMapping("/showRegistration")
 	public String showRegistrationPage() {
+		LOGGER.info("Inside showRegistrationPage()");
 		return "login/registerUser";
 	}
 
 	@PostMapping("registerUser")
 	public String register(@ModelAttribute("user")User user) {
+		LOGGER.info("Inside  register()+user");
 		repository.save(user);
 		return"login/login";
 	}
@@ -38,6 +46,11 @@ public class UserController {
 	@PostMapping("/login")
 	public String login(@RequestParam("email")String email,@RequestParam("pass")String pass,ModelMap modelMap) {
 		
+		LOGGER.error("ERROR");
+		LOGGER.warn("WARNING");
+		LOGGER.info("INFORMATION");
+		LOGGER.debug("DEBUG");
+		LOGGER.trace("TRACE");
 		boolean loginResponse = security.login(email, pass);
 		if(loginResponse) {
 			return "findFlights";
