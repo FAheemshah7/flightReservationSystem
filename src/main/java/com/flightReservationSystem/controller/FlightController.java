@@ -1,4 +1,4 @@
-package com.flightReservationSystem.controller;
+ package com.flightReservationSystem.controller;
 
 import java.util.Date;
 import java.util.List;
@@ -27,11 +27,17 @@ public class FlightController {
 	public String findFlights(@RequestParam("from")String from,@RequestParam("to")String to,
 			@RequestParam("departureDate")@DateTimeFormat(pattern="MM-dd-yyyy") Date departureDate,ModelMap modelMap ) {
 		LOGGER.info("Inside findFlights() From:"+from+"TO: "+to+"Departure Date :"+departureDate); 
-
 		List<Flight> flights = repository.findFlights(from,to,departureDate);
 		modelMap.addAttribute("flights",flights);
 		LOGGER.info("Flights Found are :"+flights);
 		return "displayFlights";
+	}
+	
+	
+	@RequestMapping("admin/showAddFlight")
+	public String showAddFlight() {
+		return "addFlight";
+		
 	}
 
 
