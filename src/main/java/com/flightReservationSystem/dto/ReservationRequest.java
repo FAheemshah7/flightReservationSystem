@@ -84,4 +84,11 @@ public class ReservationRequest {
 		this.pinCode = pinCode;
 	}
 
+	@Override
+	public String toString() {
+		return "ReservationRequest [flightId=" + flightId + ", pFisrtName=" + pFisrtName + ", pLastName=" + pLastName
+				+ ", pEmail=" + pEmail + ", pPhone=" + pPhone + ", nameOnTheCard=" + nameOnTheCard + ", cardNo="
+				+ cardNo + ", expiryDate=" + expiryDate + ", pinCode=" + pinCode + "]";
+	}
+
 }
