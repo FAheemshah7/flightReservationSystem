@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.flightReservationSystem.entity.User;
 import com.flightReservationSystem.repository.UserRepository;
+import com.flightReservationSystem.services.SecurityService;
 
 @Controller
 public class UserController {
 	@Autowired
 	private UserRepository repository;
+
+	@Autowired
+	SecurityService security;
 	
 	@RequestMapping("/showRegistration")
 	public String showRegistrationPage() {
@@ -33,8 +37,9 @@ public class UserController {
 	
 	@PostMapping("/login")
 	public String login(@RequestParam("email")String email,@RequestParam("pass")String pass,ModelMap modelMap) {
-		User user = repository.findByEmail(email);
-		if(user.getPass().equals(pass)) {
+		
+		boolean loginResponse = security.login(email, pass);
+		if(loginResponse) {
 			return "findFlights";
 		}
 		else {

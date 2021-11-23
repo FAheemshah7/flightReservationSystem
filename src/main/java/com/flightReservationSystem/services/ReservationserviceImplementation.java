@@ -2,6 +2,7 @@ package com.flightReservationSystem.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.flightReservationSystem.dto.ReservationRequest;
 import com.flightReservationSystem.entity.Flight;
@@ -14,6 +15,7 @@ import com.flightReservationSystem.util.EmailUtill;
 import com.flightReservationSystem.util.PDFGenerator;
 
 @Service
+@Transactional
 public class ReservationserviceImplementation implements ReservationService {
 
 	@Autowired
@@ -24,7 +26,7 @@ public class ReservationserviceImplementation implements ReservationService {
 	
 	@Autowired
 	ReservationRepository reservationRepository;
-	
+	 
 	@Autowired
 	PDFGenerator pdf;
 	
