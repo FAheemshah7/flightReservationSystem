@@ -24,7 +24,7 @@ public class UserController {
 	@Autowired
 	SecurityService security;
 	
-	private Logger LOGGER=LoggerFactory.getLogger(UserController.class);
+	private static final Logger LOGGER=LoggerFactory.getLogger(UserController.class);
 	
 	@RequestMapping("/showRegistration")
 	public String showRegistrationPage() {

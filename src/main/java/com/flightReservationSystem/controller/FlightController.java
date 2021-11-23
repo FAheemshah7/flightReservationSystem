@@ -21,7 +21,7 @@ public class FlightController {
 	@Autowired
 	FlightRepository repository;
 
-	Logger LOGGER=LoggerFactory.getLogger(FlightController.class);
+	private static final Logger LOGGER=LoggerFactory.getLogger(FlightController.class);
 	
 	@RequestMapping("findFlights")
 	public String findFlights(@RequestParam("from")String from,@RequestParam("to")String to,
