@@ -1,16 +1,15 @@
 package com.flightReservationSystem.entity;
 
 import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
 import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 @Table(name="ROLE")
 public class Role extends AbstractEntity implements GrantedAuthority {
+	
 	private String name;
 	
 	@ManyToMany (mappedBy="roles")
@@ -19,6 +18,7 @@ public class Role extends AbstractEntity implements GrantedAuthority {
 	public String getName() {
 		return name;
 	}
+
 
 	public void setName(String name) {
 		this.name = name;
@@ -36,5 +36,11 @@ public class Role extends AbstractEntity implements GrantedAuthority {
 	public String getAuthority() {
 		return name;
 	} 
+	@Override
+	public String toString() {
+		return "Role [name=" + name + ", user=" + user + "]";
+	}
+
+
 
 }
