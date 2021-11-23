@@ -50,6 +50,7 @@ public class Flight  extends AbstractEntity{
 	public String getArCity() {
 		return arCity;
 	}
+	
 	public void setArCity(String arCity) {
 		this.arCity = arCity;
 	}
@@ -65,6 +66,11 @@ public class Flight  extends AbstractEntity{
 	public void setEstimedDepartureTime(Timestamp estimedDepartureTime) {
 		this.estimedDepartureTime = estimedDepartureTime;
 	}
-	
+	@Override
+	public String toString() {
+		return "Flight [fNumber=" + fNumber + ", operAirline=" + operAirline + ", dCity=" + dCity + ", arCity=" + arCity
+				+ ", dateOfDeparture=" + dateOfDeparture + ", estimedDepartureTime=" + estimedDepartureTime + "]";
+	}
+
 
 }
