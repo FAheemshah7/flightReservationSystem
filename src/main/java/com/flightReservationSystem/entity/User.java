@@ -25,6 +25,11 @@ public class User extends AbstractEntity {
 	@Column(name="pass")
 	private String pass;
 	
+	@Override
+	public String toString() {
+		return "User [f_name=" + f_name + ", l_name=" + l_name + ", email=" + email + ", pass=" + pass + ", roles="
+				+ roles + "]";
+	}
 	@ManyToMany
 	@JoinTable(name="user_role",joinColumns=@JoinColumn(name="user_id"),inverseJoinColumns=@JoinColumn(name="role_id"))
 	private Set<Role> roles;
