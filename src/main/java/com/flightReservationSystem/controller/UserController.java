@@ -34,18 +34,19 @@ public class UserController {
 
 	@PostMapping("registerUser")
 	public String register(@ModelAttribute("user")User user) {
-		LOGGER.info("Inside  register()+user");
+		LOGGER.info("Inside  register()"+user);
 		repository.save(user);
 		return"login/login";
 	}
 	@RequestMapping("/showLogin")
 	public String showLogninPage() {
+		LOGGER.info("Inside showLogninPage()");
 		return "login/login";
 	}
 	
 	@PostMapping("/login")
 	public String login(@RequestParam("email")String email,@RequestParam("pass")String pass,ModelMap modelMap) {
-		
+		LOGGER.info("Inside login() and the emial is :"+email);
 		LOGGER.error("ERROR");
 		LOGGER.warn("WARNING");
 		LOGGER.info("INFORMATION");
