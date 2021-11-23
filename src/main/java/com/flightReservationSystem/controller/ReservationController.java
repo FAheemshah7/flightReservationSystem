@@ -38,6 +38,7 @@ public class ReservationController {
 	}
 	@PostMapping("/completeReservation")
 	public String completeReservation(ReservationRequest request,ModelMap modelMap) {
+		LOGGER.info("Inside completeReservation() with the flight id :"+request);
 		Reservation reservation = reservationService.bookFlight(request);
 		modelMap.addAttribute("msg", "Reservation Successfull and The Reservation id is :"+reservation.getId());
 		
